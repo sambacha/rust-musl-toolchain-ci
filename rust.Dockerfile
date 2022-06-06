@@ -3,14 +3,15 @@ ARG RUST_VERSION
 # We use Clang and libc++ from LLVM. The commit should match the one
 # used by Rust. For each Rust version it can be found here
 # https://github.com/rust-lang/rust/tree/master/src as the commit hash of the
-# submodule "llvm-project". Example "c9e2e89ed3aa5a3be77143aa0c86906b4138374a".
+# submodule "llvm-project". 
+# value "c9e2e89ed3aa5a3be77143aa0c86906b4138374a".
 ARG LLVM_GIT_COMMIT
 
 # The version of musl should be the same as the one Rust is compiled with.
 # This version can be found in this file:
 # https://github.com/rust-lang/rust/blob/master/src/ci/docker/scripts/musl-toolchain.sh.
 # https://github.com/rust-lang/rust/blob/4322a785cc99ea5fc81dd7f5fc8ba7f7a64b08ef/src/ci/docker/scripts/musl.sh#L28
-# Exampel: "1.1.24".
+# value: "1.1.24".
 ARG MUSL_VERSION
 
 # LLVM target triple for Linux and MUSL. Full list of supported triples
@@ -35,7 +36,8 @@ ARG LTO="thin"
 
 # Used by libc++. Programs compiled with this version should work with other
 # kernel versions too. See https://wiki.gentoo.org/wiki/Linux-headers#FAQ.
-# Linux kernel version: 5.13.0-1025-azure is the github CI version
+# Linux kernel 
+# version: 5.13.0-1025-azure is the github CI version
 ARG LINUX_HEADERS_VERSION=5.13.0
 
 # Locations for produced tools and libraries.
