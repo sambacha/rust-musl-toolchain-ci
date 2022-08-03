@@ -1,10 +1,27 @@
+# syntaxdocker/dockerfile-upstream:master-experimental
+#
+# Rust LLVM/Clang/Musl Static Build toolchain
+#
+# 
 # A version like "1.60.0" or "nightly-2022-05-01".
 ARG RUST_VERSION
+#
 # We use Clang and libc++ from LLVM. The commit should match the one
-# used by Rust. For each Rust version it can be found here
-# https://github.com/rust-lang/rust/tree/master/src as the commit hash of the
-# submodule "llvm-project". 
-# value "c9e2e89ed3aa5a3be77143aa0c86906b4138374a".
+#  used by Rust. For each Rust version it can be found here:
+#
+#    https://github.com/rust-lang/rust/tree/master/src 
+#
+#   It is the commit hash of the submodule "llvm-project". 
+#
+# as of August 02, 2022
+# rust 1.62.1 https://github.com/rust-lang/rust/tree/1.62.1/src
+# rust commit: e092d0b6b43f2de967af0887873151bb1c0b18d3
+#
+# LLVM_GIT_COMMIT=c9e2e89ed3aa5a3be77143aa0c86906b4138374a
+# RUST_VERSION=1.62.1
+# RUST_GIT_COMMIT=e092d0b6b43f2de967af0887873151bb1c0b18d3
+#
+
 ARG LLVM_GIT_COMMIT
 
 # The version of musl should be the same as the one Rust is compiled with.
